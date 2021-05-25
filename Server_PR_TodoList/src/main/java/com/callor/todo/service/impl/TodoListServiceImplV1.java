@@ -41,7 +41,7 @@ public class TodoListServiceImplV1 implements TodoListService {
 			tdVO.setTd_place(rSet.getString(DBInfo.td_place));
 			tdList.add(tdVO);
 		}
-		System.out.println(tdList.toString());
+//		System.out.println(tdList.toString());
 		return tdList;
 	}
 	
@@ -60,7 +60,7 @@ public class TodoListServiceImplV1 implements TodoListService {
 			List<TodoListVO> tdList = this.select(pStr);
 			pStr.close();
 			
-			System.out.println(tdList.toString());
+//			System.out.println(tdList.toString());
 			return tdList;
 			
 		} catch (SQLException e) {
@@ -99,7 +99,7 @@ public class TodoListServiceImplV1 implements TodoListService {
 
 	@Override
 	public Integer insert(TodoListVO tdVO) {
-		// TODO 할일 데이터 추가
+		// TODO 데이터 추가
 		String sql = " INSERT INTO tbl_todolist ";
 		sql += " ( ";
 		sql += " td_seq, ";
@@ -160,7 +160,7 @@ public class TodoListServiceImplV1 implements TodoListService {
 	@Override
 	public Integer delete(Long seq) {
 		// TODO 데이터 삭제
-		String sql = " DELETE FROM tbl_tololist ";
+		String sql = " DELETE FROM tbl_todolist ";
 		sql += " WHERE td_seq = ? ";
 		
 		PreparedStatement pStr = null;

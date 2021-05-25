@@ -7,6 +7,48 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="${rootPath}/static/css/home.css?ver2021-05-25-001" rel="stylesheet" />
+<style>
+	* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	}
+
+	table#tdlist tr:hover {
+		cursor: pointer;
+		background-color: #ddd;
+	}
+	
+	table {
+		border-collapse: collapse;
+		width: 80%;
+		margin: 10px auto;
+	}
+	
+	td, th {
+		border:1px solid green;
+		padding: 5px;
+		text-align: center;
+	}
+	
+	form {
+		width: 80%;
+		margin: 10px auto;
+		text-align: right;
+	}
+	button.btn_insert {
+		outline: 0;
+		border: 0;
+		width: 100px;
+		color: white;
+		background-color: red;
+		padding: 5px;
+		margin: 10px auto;
+	}
+	
+</style>
+
 <script>
 document.addEventListener("DOMContentLoaded",function(){
 	document.querySelector("table#tdlist").addEventListener("click",function(ev){
@@ -33,7 +75,6 @@ document.addEventListener("DOMContentLoaded",function(){
 </head>
 <body>
 <%@ include file="/WEB-INF/views/include_nav.jsp"%>
-	<h1>TO DO List</h1>
 	<form>
 			<label></label>
 			<button class="btn_insert" type="button">추가</button>

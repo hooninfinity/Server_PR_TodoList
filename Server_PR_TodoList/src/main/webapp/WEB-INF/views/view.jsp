@@ -7,37 +7,59 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="${rootPath}/static/css/home.css?ver2021-05-24-001" rel="stylesheet" />
 <style>
-div.view_btn {
-	width: 80%;
-	margin: 10px auto;
-	text-align: right;
-}
+	* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	}
 
-div.view_btn button {
-	margin: 5px;
-	padding: 8px;
-	outline: none;
-	border: none;
-	color: white;
-}
+	table#tdlist tr:hover {
+		cursor: pointer;
+		background-color: #ddd;
+	}
+	
+	table {
+		border-collapse: collapse;
+		width: 80%;
+		margin: 10px auto;
+	}
+	
+	td, th {
+		border:1px solid green;
+		padding: 5px;
+		text-align: center;
+	}
 
-div.view_btn button:nth-child(1) {
-	background-color: blue;
-}
-
-div.view_btn button:nth-child(2) {
-	background-color: green;
-}
-
-div.view_btn button:nth-child(3) {
-	background-color: red;
-}
-
-div.view_btn button:hover {
-	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
-}
+	div.view_btn {
+		width: 80%;
+		margin: 10px auto;
+		text-align: right;
+	}
+	
+	div.view_btn button {
+		margin: 5px;
+		padding: 8px;
+		outline: none;
+		border: none;
+		color: white;
+	}
+	
+	div.view_btn button:nth-child(1) {
+		background-color: blue;
+	}
+	
+	div.view_btn button:nth-child(2) {
+		background-color: green;
+	}
+	
+	div.view_btn button:nth-child(3) {
+		background-color: red;
+	}
+	
+	div.view_btn button:hover {
+		box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+	}
 </style>
 <script>
 document
@@ -50,6 +72,8 @@ document
 		// 클릭된 tag의 클래스이름 가져오기
 		let className = ev.target.className;
 		if (className == "btn_home") {
+			
+			document.location.href = "${rootPath}/"
 			
 		} else if (className == "btn_update") {
 			

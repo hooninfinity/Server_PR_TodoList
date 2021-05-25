@@ -8,34 +8,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-	* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	}
-
-	table#tdlist tr:hover {
-		cursor: pointer;
-		background-color: #ddd;
-	}
-	
-	table {
-		border-collapse: collapse;
-		width: 80%;
-		margin: 10px auto;
-	}
-	
-	td, th {
-		border:1px solid green;
-		padding: 5px;
-		text-align: center;
-	}
-	
-	div {
-		width: 80%;
-		margin: 10px auto;
-	}
-	
 	form.v1 {
 		width: 80%;
 		margin: 10px auto;
@@ -68,7 +40,6 @@
 	}
 	
 	div.view_btn {
-		width: 80%;
 		margin: 10px auto;
 		text-align: right;
 	}
@@ -100,20 +71,24 @@
 </style>
 
 <script>
+//script를 본문 어디에나 두기 위해 document.addEventListener("DOMContentLoaded" 써놓음. 이게 없으면 화면 맨 뒤로 가야함
 document.addEventListener("DOMContentLoaded",function(){
+	
 	document.querySelector("button.btn_save")
 	.addEventListener("click",function(ev){
+		
 		let dom = document;
-		let td_todo = dom.querySelector("textarea");
 		let td_place = dom.querySelector("input[name='td_place']");
+		let td_todo = dom.querySelector("textarea");
 		
 		if (td_todo.value == "") {
-			alert("할일을 입력하세요")
-			td_todo.focus()
+			alert("할일은 반드시 입력해야 합니다")
+			td_todo.focus();
 			return false;
 		}
 		
-		dom.querySelector("form.v1").submit()
+		// 서버로 제출
+		dom.querySelector("form.v1").submit();
 	})
 	
 	document.querySelector("button.btn_home")
@@ -127,12 +102,13 @@ document.addEventListener("DOMContentLoaded",function(){
 	
 })
 </script>
+
 </head>
 <body>
-<%@ include file="/WEB-INF/views/include_nav.jsp"%>
+	<%@ include file="/WEB-INF/views/include_nav.jsp" %>
 	<form class="v1" method="POST">
 		<fieldset>
-			<legend>할일 작성</legend>
+			<legend>할일 수정</legend>
 		<div>
 			<label>작성일자</label>
 			<input name="td_date" type="date" value="${TD.td_date}">
@@ -150,11 +126,13 @@ document.addEventListener("DOMContentLoaded",function(){
 			<textarea name="td_todo" rows="20">${TD.td_todo}</textarea>
 		</div>
 		</fieldset>
+	<div class="view_btn">
+		<button class="btn_save" type="button">저장</button>
+		<button type="reset">다시작성</button>
+		<button class="btn_home" type="button">처음으로</button>
+	</div>
 	</form>
 	
-		<div class="view_btn">
-			<button class="btn_save" type="button">저장</button>
-			<button class="btn_home" type="button">처음으로</button>
-		</div>
+	
 </body>
 </html>
