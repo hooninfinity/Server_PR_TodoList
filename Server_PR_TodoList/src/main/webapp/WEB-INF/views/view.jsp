@@ -7,28 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="${rootPath}/static/css/home.css?ver2021-05-25-003" rel="stylesheet" />
 <style>
-	* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	}
-
-	table#tdlist tr:hover {
-		cursor: pointer;
-		background-color: #ddd;
-	}
-	
 	table {
-		border-collapse: collapse;
-		width: 80%;
-		margin: 10px auto;
-	}
-	
-	td, th {
-		border:1px solid green;
-		padding: 5px;
-		text-align: center;
+		font-size: 20px;
 	}
 
 	div.view_btn {
@@ -43,6 +25,8 @@
 		outline: none;
 		border: none;
 		color: white;
+		font-size: 20px;
+		border-radius: 10px;
 	}
 	
 	div.view_btn button:nth-child(1) {

@@ -11,6 +11,7 @@
 	form.v1 {
 		width: 80%;
 		margin: 10px auto;
+		font-size: 20px;
 	}
 	
 	form.v1 fieldset {
@@ -26,6 +27,8 @@
 		display: inline-block;
 		padding: 5px;
 		margin: 5px;
+		margin: 5px;
+		font-size: 18px;
 	}
 	
 	form.v1 label {
@@ -39,6 +42,11 @@
 		border-radius: 5px;
 	}
 	
+	label[for="c"]{
+		position: relative;
+        top: -400px;
+	}
+	
 	div.view_btn {
 		margin: 10px auto;
 		text-align: right;
@@ -50,6 +58,8 @@
 		outline: none;
 		border: none;
 		color: white;
+		font-size: 20px;
+		border-radius: 10px;
 	}
 	
 	div.view_btn button:nth-child(1) {
@@ -122,7 +132,7 @@ document.addEventListener("DOMContentLoaded",function(){
 			<input name="td_place" type="text" value="${TD.td_place}">
 		</div>
 		<div>
-			<label>할일</label>
+			<label for="c">할일</label>
 			<textarea name="td_todo" rows="20">${TD.td_todo}</textarea>
 		</div>
 		</fieldset>

@@ -8,27 +8,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-	* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	}
-
 	table#tdlist tr:hover {
 		cursor: pointer;
 		background-color: #ddd;
-	}
-	
-	table {
-		border-collapse: collapse;
-		width: 80%;
-		margin: 10px auto;
-	}
-	
-	td, th {
-		border:1px solid green;
-		padding: 5px;
-		text-align: center;
 	}
 	
 	div {
@@ -39,6 +21,7 @@
 	form.v1 {
 		width: 80%;
 		margin: 10px auto;
+		font-size: 20px;
 	}
 	
 	form.v1 fieldset {
@@ -54,6 +37,7 @@
 		display: inline-block;
 		padding: 5px;
 		margin: 5px;
+		font-size: 18px;
 	}
 	
 	form.v1 label {
@@ -65,6 +49,11 @@
 		width: 300px;
 		border: 1px solid green;
 		border-radius: 5px;
+	}
+	
+	label[for="c"]{
+		position: relative;
+        top: -400px;
 	}
 	
 	div.view_btn {
@@ -79,6 +68,8 @@
 		outline: none;
 		border: none;
 		color: white;
+		font-size: 20px;
+		border-radius: 10px;
 	}
 	
 	div.view_btn button:nth-child(1) {
@@ -146,7 +137,7 @@ document.addEventListener("DOMContentLoaded",function(){
 			<input name="td_place" type="text" value="${TD.td_place}">
 		</div>
 		<div>
-			<label>할일</label>
+			<label for="c">할일</label>
 			<textarea name="td_todo" rows="20">${TD.td_todo}</textarea>
 		</div>
 		</fieldset>
